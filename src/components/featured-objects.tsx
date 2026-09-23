@@ -19,7 +19,7 @@ export function FeaturedObjects() {
       <ul className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
         {OBJECTS.slice(0, 4).map((o) => (
           <li key={o.id} id={o.anchor} className="scroll-mt-24">
-            <a href={`/#${o.anchor}`} className="group block">
+            <Link to="/objects/$slug" params={{ slug: o.slug }} className="group block">
               <div className="relative overflow-hidden border border-border bg-card">
                 <img
                   src={o.img}
@@ -42,7 +42,7 @@ export function FeaturedObjects() {
                 </div>
                 <p className="font-technical text-sm">{o.price}</p>
               </div>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
