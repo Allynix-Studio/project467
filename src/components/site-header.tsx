@@ -85,6 +85,7 @@ export function SiteHeader() {
           </div>
         </div>
       </header>
+      <BagDrawer />
 
       <div
         id="mobile-menu"
