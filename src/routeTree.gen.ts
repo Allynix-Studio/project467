@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ArchiveRouteImport } from './routes/archive'
+import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
+import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
 import { Route as ObjectsSlugRouteImport } from './routes/objects.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,6 +25,16 @@ const ArchiveRoute = ArchiveRouteImport.update({
   path: '/archive',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
+  id: '/collections/',
+  path: '/collections/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
+  id: '/collections/$slug',
+  path: '/collections/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObjectsSlugRoute = ObjectsSlugRouteImport.update({
   id: '/objects/$slug',
   path: '/objects/$slug',
@@ -32,31 +44,47 @@ const ObjectsSlugRoute = ObjectsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/archive': typeof ArchiveRoute
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/objects/$slug': typeof ObjectsSlugRoute
+  '/collections/': typeof CollectionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/archive': typeof ArchiveRoute
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/objects/$slug': typeof ObjectsSlugRoute
+  '/collections': typeof CollectionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/archive': typeof ArchiveRoute
+  '/collections/$slug': typeof CollectionsSlugRoute
   '/objects/$slug': typeof ObjectsSlugRoute
+  '/collections/': typeof CollectionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/archive' | '/objects/$slug'
+  fullPaths:
+    '/' | '/archive' | '/collections/$slug' | '/objects/$slug' | '/collections/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/archive' | '/objects/$slug'
-  id: '__root__' | '/' | '/archive' | '/objects/$slug'
+  to:
+    '/' | '/archive' | '/collections/$slug' | '/objects/$slug' | '/collections'
+  id:
+    | '__root__'
+    | '/'
+    | '/archive'
+    | '/collections/$slug'
+    | '/objects/$slug'
+    | '/collections/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArchiveRoute: typeof ArchiveRoute
+  CollectionsSlugRoute: typeof CollectionsSlugRoute
   ObjectsSlugRoute: typeof ObjectsSlugRoute
+  CollectionsIndexRoute: typeof CollectionsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,6 +103,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArchiveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections/': {
+      id: '/collections/'
+      path: '/collections'
+      fullPath: '/collections/'
+      preLoaderRoute: typeof CollectionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections/$slug': {
+      id: '/collections/$slug'
+      path: '/collections/$slug'
+      fullPath: '/collections/$slug'
+      preLoaderRoute: typeof CollectionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/objects/$slug': {
       id: '/objects/$slug'
       path: '/objects/$slug'
@@ -88,7 +130,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArchiveRoute: ArchiveRoute,
+  CollectionsSlugRoute: CollectionsSlugRoute,
   ObjectsSlugRoute: ObjectsSlugRoute,
+  CollectionsIndexRoute: CollectionsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
