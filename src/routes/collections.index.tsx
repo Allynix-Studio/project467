@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
+import { Reveal } from "@/motion/primitives/reveal";
 import { COLLECTIONS, collectionObjects } from "@/lib/collections";
 
 export const Route = createFileRoute("/collections/")({
@@ -33,7 +34,7 @@ function Collections() {
           {COLLECTIONS.map((c) => {
             const items = collectionObjects(c);
             return (
-              <li key={c.slug}>
+              <li key={c.slug}><Reveal>
                 <Link to="/collections/$slug" params={{ slug: c.slug }} className="group grid gap-8 py-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
                   <div>
                     <p className="font-technical text-[10px] uppercase text-primary">{c.index} / {c.kicker}</p>
@@ -49,7 +50,7 @@ function Collections() {
                     ))}
                   </div>
                 </Link>
-              </li>
+              </Reveal></li>
             );
           })}
         </ul>

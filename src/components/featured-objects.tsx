@@ -1,3 +1,4 @@
+import { Reveal } from "@/motion/primitives/reveal";
 import { Link } from "@tanstack/react-router";
 import { OBJECTS } from "@/lib/objects";
 
@@ -17,8 +18,8 @@ export function FeaturedObjects() {
       </div>
 
       <ul className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {OBJECTS.slice(0, 4).map((o) => (
-          <li key={o.id} id={o.anchor} className="scroll-mt-24">
+        {OBJECTS.slice(0, 4).map((o, i) => (
+          <li key={o.id} id={o.anchor} className="scroll-mt-24"><Reveal index={i}>
             <Link to="/objects/$slug" params={{ slug: o.slug }} className="group block">
               <div className="relative overflow-hidden border border-border bg-card">
                 <img
@@ -43,7 +44,7 @@ export function FeaturedObjects() {
                 <p className="font-technical text-sm">{o.price}</p>
               </div>
             </Link>
-          </li>
+          </Reveal></li>
         ))}
       </ul>
     </section>
