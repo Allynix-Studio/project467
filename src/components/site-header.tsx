@@ -3,11 +3,11 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Search, ShoppingBag, X } from "lucide-react";
 
 const NAV = [
-  { label: "Apparel", href: "/#apparel", index: "01" },
-  { label: "Figures", href: "/#figures", index: "02" },
-  { label: "Collectibles", href: "/#collectibles", index: "03" },
-  { label: "Art", href: "/#art", index: "04" },
-  { label: "Archive", href: "/#archive", index: "05" },
+  { label: "Apparel", href: "/archive?category=Apparel", index: "01" },
+  { label: "Figures", href: "/archive?category=Figures", index: "02" },
+  { label: "Collectibles", href: "/archive?category=Collectibles", index: "03" },
+  { label: "Art", href: "/archive?category=Art", index: "04" },
+  { label: "Archive", href: "/archive", index: "05" },
 ];
 
 export function SiteHeader() {
