@@ -16,7 +16,7 @@ const SORTS = [
 type Sort = (typeof SORTS)[number]["id"];
 
 export const Route = createFileRoute("/archive")({
-  validateSearch: (search: Record<string, unknown>): { category?: Filter; q?: string; sort?: Sort } => {
+  validateSearch: (search: Record<string, unknown>): { category?: Filter | undefined; q?: string | undefined; sort?: Sort | undefined } => {
     const c = search["category"];
     const q = typeof search["q"] === "string" ? search["q"].slice(0, 80) : "";
     const sort = SORTS.some((x) => x.id === search["sort"]) ? (search["sort"] as Sort) : undefined;
