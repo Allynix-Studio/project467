@@ -7,7 +7,7 @@ const NAV = [
   { label: "Figures", href: "/#figures", index: "02" },
   { label: "Collectibles", href: "/#collectibles", index: "03" },
   { label: "Art", href: "/#art", index: "04" },
-  { label: "Archive", href: "/#archive", index: "05" },
+  { label: "Archive", href: "/archive", index: "05" },
 ];
 
 export function SiteHeader() {

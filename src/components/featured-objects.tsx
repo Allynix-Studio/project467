@@ -1,14 +1,5 @@
-import hoodie from "@/assets/object-hoodie.jpg";
-import figure from "@/assets/object-figure.jpg";
-import print from "@/assets/object-print.jpg";
-import goods from "@/assets/object-goods.jpg";
-
-const OBJECTS = [
-  { id: "01", name: "Yume Heavyweight Hoodie", category: "Apparel", price: "$148", note: "Embroidered", img: hoodie, anchor: "apparel" },
-  { id: "02", name: "Pilot 01 Scale Figure", category: "Figures", price: "$320", note: "1:7 scale", img: figure, anchor: "figures" },
-  { id: "03", name: "Kitsune Ink Print", category: "Art", price: "$210", note: "Edition of 67", img: print, anchor: "art" },
-  { id: "04", name: "Akane Character Set", category: "Collectibles", price: "$64", note: "Pins / stand / plush", img: goods, anchor: "collectibles" },
-];
+import { Link } from "@tanstack/react-router";
+import { OBJECTS } from "@/lib/objects";
 
 export function FeaturedObjects() {
   return (
@@ -20,13 +11,13 @@ export function FeaturedObjects() {
             Selected<br />this season.
           </h2>
         </div>
-        <a href="/#archive" className="font-technical border-b border-border pb-1 text-[11px] uppercase text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
+        <Link to="/archive" className="font-technical border-b border-border pb-1 text-[11px] uppercase text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
           View all objects
-        </a>
+        </Link>
       </div>
 
       <ul className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-        {OBJECTS.map((o) => (
+        {OBJECTS.slice(0, 4).map((o) => (
           <li key={o.id} id={o.anchor} className="scroll-mt-24">
             <a href={`/#${o.anchor}`} className="group block">
               <div className="relative overflow-hidden border border-border bg-card">

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { FeaturedObjects } from "@/components/featured-objects";
@@ -38,7 +38,7 @@ function Index() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button size="lg">Shop the drop</Button>
-              <Button size="lg" variant="outline">Enter the archive</Button>
+              <Button size="lg" variant="outline" asChild><Link to="/archive">Enter the archive</Link></Button>
             </div>
             <dl className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-6 font-technical text-[10px] uppercase">
               <div><dt className="text-muted-foreground">Edition</dt><dd className="mt-2 text-foreground">1 / 467</dd></div>
