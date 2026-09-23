@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
+import { FeaturedObjects } from "@/components/featured-objects";
 import heroFigure from "@/assets/hero-figure.jpg";
 
 export const Route = createFileRoute("/")({
@@ -55,6 +56,8 @@ function Index() {
             </figure>
           </div>
         </section>
+
+        <FeaturedObjects />
 
         <footer className="flex flex-wrap items-end justify-between gap-6 border-t border-border pt-5 font-technical text-[10px] uppercase text-muted-foreground">
           <p>Anime / Objects / Culture</p>
