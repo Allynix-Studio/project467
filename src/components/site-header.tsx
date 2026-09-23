@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, Search, ShoppingBag, X } from "lucide-react";
+import { useBag } from "@/lib/bag";
+import { BagDrawer } from "@/components/commerce/bag-drawer";
 
 const NAV = [
   { label: "Apparel", href: "/archive?category=Apparel", index: "01" },
@@ -14,6 +16,8 @@ const NAV = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const count = useBag((s) => s.lines.reduce((n, l) => n + l.qty, 0));
+  const setBagOpen = useBag((s) => s.setOpen);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -65,9 +69,9 @@ export function SiteHeader() {
             <button aria-label="Search" className="grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
               <Search className="size-4" />
             </button>
-            <button aria-label="Bag, 0 items" className="relative grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
+            <button aria-label={`Bag, ${count} items`} onClick={() => setBagOpen(true)} className="relative grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
               <ShoppingBag className="size-4" />
-              <span className="font-technical absolute right-1 top-1 text-[9px] text-primary">0</span>
+              <span className="font-technical absolute right-1 top-1 text-[9px] text-primary">{count}</span>
             </button>
             <button
               aria-label={open ? "Close menu" : "Open menu"}
