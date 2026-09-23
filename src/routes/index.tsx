@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
+import { SiteHeader } from "@/components/site-header";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,11 +19,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="surface-grain min-h-screen overflow-hidden bg-background text-foreground">
-      <div className="mx-auto flex min-h-screen max-w-[112rem] flex-col px-5 py-5 sm:px-8 sm:py-7 lg:px-12">
-        <header className="flex items-center justify-between border-b border-border pb-5">
-          <p className="text-sm font-semibold uppercase">Project 467</p>
-          <p className="font-technical text-[10px] uppercase text-muted-foreground">Visual validation / 01</p>
-        </header>
+      <SiteHeader />
+      <div className="mx-auto flex min-h-screen max-w-[112rem] flex-col px-5 pb-5 pt-16 sm:px-8 sm:pb-7 lg:px-12">
+
 
         <section className="grid flex-1 grid-cols-1 items-end gap-12 py-14 lg:grid-cols-12 lg:py-20">
           <div className="lg:col-span-8">
