@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { OBJECTS, getObject } from "@/lib/objects";
+import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
 import { useBag } from "@/lib/bag";
 
 export const Route = createFileRoute("/objects/$slug")({
@@ -64,11 +65,11 @@ function ObjectPage() {
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-          <div className="overflow-hidden border border-border bg-card">
+          <ImageReveal key={o.slug} className="overflow-hidden border border-border bg-card">
             <img src={o.img} alt={o.name} width={960} height={1200} className="aspect-[4/5] w-full object-cover" />
-          </div>
+          </ImageReveal>
 
-          <div className="lg:sticky lg:top-24 lg:self-start">
+          <Reveal immediate key={`d-${o.slug}`} index={2} className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-technical text-[10px] uppercase text-primary">{o.category} / {o.year} / {o.note}</p>
             <h1 className="mt-4 text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.9] font-medium uppercase">{o.name}</h1>
             <p className="font-technical mt-6 text-2xl">{o.price}</p>
@@ -107,7 +108,7 @@ function ObjectPage() {
                 </div>
               ))}
             </dl>
-          </div>
+          </Reveal>
         </div>
 
         <section className="mt-24 border-t border-border pt-12">
