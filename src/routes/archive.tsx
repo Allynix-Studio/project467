@@ -6,9 +6,9 @@ const FILTERS = ["All", ...CATEGORIES] as const;
 type Filter = (typeof FILTERS)[number];
 
 export const Route = createFileRoute("/archive")({
-  validateSearch: (search: Record<string, unknown>): { category: Filter } => {
-    const c = search.category;
-    return { category: FILTERS.includes(c as Filter) ? (c as Filter) : "All" };
+  validateSearch: (search: Record<string, unknown>): { category?: Filter } => {
+    const c = search["category"];
+    return FILTERS.includes(c as Filter) && c !== "All" ? { category: c as Filter } : {};
   },
   head: () => ({
     meta: [
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/archive")({
 });
 
 function Archive() {
-  const { category } = Route.useSearch();
+  const category = Route.useSearch({ select: (s) => s.category ?? "All" });
   const items = category === "All" ? OBJECTS : OBJECTS.filter((o) => o.category === category);
 
   return (
@@ -44,7 +44,7 @@ function Archive() {
             <Link
               key={f}
               to="/archive"
-              search={{ category: f }}
+              search={f === "All" ? {} : { category: f }}
               className={`font-technical shrink-0 border px-4 py-2 text-[11px] uppercase transition-colors ${
                 f === category ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground hover:text-foreground"
               }`}
