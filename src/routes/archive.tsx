@@ -60,7 +60,7 @@ function Archive() {
 
         <ul className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {items.map((o) => (
-            <li key={o.id} className="group">
+            <li key={o.id} className="group"><Link to="/objects/$slug" params={{ slug: o.slug }} className="block">
               <div className="relative overflow-hidden border border-border bg-card">
                 <img src={o.img} alt={o.name} width={960} height={1200} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
                 <span className="font-technical absolute left-3 top-3 text-[10px] uppercase text-muted-foreground">No. {o.id}</span>
@@ -73,7 +73,7 @@ function Archive() {
                 </div>
                 <p className="font-technical text-sm">{o.price}</p>
               </div>
-            </li>
+            </Link></li>
           ))}
         </ul>
       </div>
