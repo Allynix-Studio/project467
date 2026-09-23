@@ -80,7 +80,6 @@ function Archive() {
             <label className="flex items-center gap-2 border border-border px-3">
               <Search className="size-3.5 text-muted-foreground" />
               <input
-                key={q}
                 defaultValue={q}
                 aria-label="Filter archive"
                 placeholder="Filter"
