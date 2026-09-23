@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, Search, ShoppingBag, X } from "lucide-react";
 import { useBag } from "@/lib/bag";
+import { SearchOverlay } from "@/components/navigation/search-overlay";
 import { BagDrawer } from "@/components/commerce/bag-drawer";
 
 const NAV = [
@@ -16,6 +17,8 @@ const NAV = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
   const count = useBag((s) => s.lines.reduce((n, l) => n + l.qty, 0));
   const setBagOpen = useBag((s) => s.setOpen);
 
@@ -66,7 +69,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-1">
-            <button aria-label="Search" className="grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
+            <button aria-label="Search" onClick={() => { setOpen(false); setSearchOpen(true); }} className="grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
               <Search className="size-4" />
             </button>
             <button aria-label={`Bag, ${count} items`} onClick={() => setBagOpen(true)} className="relative grid size-10 place-items-center text-muted-foreground transition-colors hover:text-foreground">
@@ -86,6 +89,7 @@ export function SiteHeader() {
         </div>
       </header>
       <BagDrawer />
+      <SearchOverlay open={searchOpen} onClose={closeSearch} />
 
       <div
         id="mobile-menu"
