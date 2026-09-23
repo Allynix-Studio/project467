@@ -29,7 +29,7 @@ function Index() {
             <p className="font-technical mb-6 flex items-center gap-3 text-[10px] uppercase text-primary">
               <span className="h-px w-8 bg-primary" /> Drop 001 / Obsidian Ronin
             </p>
-            <h1 className="text-[clamp(3.5rem,7.5vw,8rem)] leading-[0.84] font-medium uppercase">
+            <h1 className="text-[clamp(3.25rem,6.5vw,7.5rem)] leading-[0.86] font-medium uppercase">
               Culture,<br />collected.
             </h1>
             <p className="mt-8 max-w-md text-lg leading-snug text-muted-foreground">
