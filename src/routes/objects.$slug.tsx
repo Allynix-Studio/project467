@@ -3,6 +3,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { OBJECTS, getObject } from "@/lib/objects";
+import { useBag } from "@/lib/bag";
 
 export const Route = createFileRoute("/objects/$slug")({
   loader: ({ params }) => {
@@ -46,6 +47,7 @@ function ObjectPage() {
   const { object: o } = Route.useLoaderData();
   const [choice, setChoice] = useState<string | null>(null);
   const [added, setAdded] = useState(false);
+  const addToBag = useBag((s) => s.add);
   const needsChoice = !!o.options && !choice;
   const related = OBJECTS.filter((x) => x.slug !== o.slug && x.category === o.category)
     .concat(OBJECTS.filter((x) => x.slug !== o.slug && x.category !== o.category))
@@ -93,7 +95,7 @@ function ObjectPage() {
               </fieldset>
             )}
 
-            <Button className="mt-8 w-full sm:w-auto" size="lg" disabled={needsChoice} onClick={() => setAdded(true)}>
+            <Button className="mt-8 w-full sm:w-auto" size="lg" disabled={needsChoice} onClick={() => { addToBag(o.slug, choice); setAdded(true); }}>
               {needsChoice ? `Select a ${o.options!.label.toLowerCase()}` : added ? "Added to bag" : "Add to bag"}
             </Button>
 
