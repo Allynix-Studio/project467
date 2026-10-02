@@ -64,7 +64,7 @@ function Archive() {
           <p className="max-w-sm text-muted-foreground">Every object we carry — figures, apparel, character goods and art — catalogued in one place.</p>
         </header>
 
-        <nav aria-label="Filter by category" className="sticky top-16 z-30 -mx-5 flex gap-2 overflow-x-auto bg-background/85 px-5 py-4 backdrop-blur sm:mx-0 sm:px-0">
+        <nav aria-label="Filter by category" className="z-30 -mx-5 flex flex-wrap gap-2 bg-background/85 px-5 py-4 backdrop-blur sm:sticky sm:top-16 sm:mx-0 sm:px-0">
           {FILTERS.map((f) => (
             <Link
               key={f}
@@ -77,22 +77,22 @@ function Archive() {
               {f}
             </Link>
           ))}
-          <div className="ml-auto flex shrink-0 items-center gap-2">
-            <label className="flex items-center gap-2 border border-border px-3">
+          <div className="flex w-full items-center gap-2 sm:ml-auto sm:w-auto">
+            <label className="flex min-w-0 flex-1 items-center gap-2 border border-border px-3 sm:flex-none">
               <Search className="size-3.5 text-muted-foreground" />
               <input
                 defaultValue={q}
                 aria-label="Filter archive"
                 placeholder="Filter"
                 onChange={(e) => navigate({ search: (prev) => ({ ...prev, q: e.target.value || undefined }), replace: true })}
-                className="font-technical w-28 bg-transparent py-2 text-[11px] uppercase outline-none placeholder:text-muted-foreground sm:w-40"
+                className="font-technical w-full min-w-0 bg-transparent py-2.5 sm:w-40 text-[11px] uppercase outline-none placeholder:text-muted-foreground "
               />
             </label>
             <select
               aria-label="Sort"
               value={sort}
               onChange={(e) => navigate({ search: (prev) => ({ ...prev, sort: e.target.value === "featured" ? undefined : (e.target.value as Sort) }), replace: true })}
-              className="font-technical border border-border bg-background px-3 py-2 text-[11px] uppercase text-muted-foreground outline-none"
+              className="font-technical border border-border shrink-0 bg-background px-3 py-2.5 text-[11px] uppercase text-muted-foreground outline-none"
             >
               {SORTS.map((x) => <option key={x.id} value={x.id}>{x.label}</option>)}
             </select>

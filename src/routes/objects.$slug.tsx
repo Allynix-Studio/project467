@@ -66,7 +66,7 @@ function ObjectPage() {
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <ImageReveal key={o.slug} className="overflow-hidden border border-border bg-card">
-            <img src={o.img} alt={o.name} width={960} height={1200} className="aspect-[4/5] w-full object-cover" />
+            <img src={o.img} alt={o.name} width={960} height={1200} className="aspect-[4/5] max-h-[60svh] w-full object-cover lg:max-h-none" />
           </ImageReveal>
 
           <Reveal immediate key={`d-${o.slug}`} index={2} className="lg:sticky lg:top-24 lg:self-start">

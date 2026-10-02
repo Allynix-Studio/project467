@@ -48,17 +48,17 @@ export function BagDrawer() {
                           {o.category}{line.option ? ` / ${o.options?.label ?? "Option"} ${line.option}` : ""}
                         </p>
                       </div>
-                      <button aria-label={`Remove ${o.name}`} onClick={() => remove(line.key)} className="text-muted-foreground transition-colors hover:text-primary">
+                      <button aria-label={`Remove ${o.name}`} onClick={() => remove(line.key)} className="-m-2 p-2 text-muted-foreground transition-colors hover:text-primary">
                         <X className="size-4" />
                       </button>
                     </div>
                     <div className="mt-auto flex items-center justify-between pt-3">
                       <div className="flex items-center border border-border">
-                        <button aria-label="Decrease quantity" onClick={() => setQty(line.key, line.qty - 1)} className="grid size-8 place-items-center text-muted-foreground hover:text-foreground">
+                        <button aria-label="Decrease quantity" onClick={() => setQty(line.key, line.qty - 1)} className="grid size-10 place-items-center sm:size-8 text-muted-foreground hover:text-foreground">
                           <Minus className="size-3" />
                         </button>
                         <span className="font-technical w-6 text-center text-xs">{line.qty}</span>
-                        <button aria-label="Increase quantity" onClick={() => setQty(line.key, line.qty + 1)} className="grid size-8 place-items-center text-muted-foreground hover:text-foreground">
+                        <button aria-label="Increase quantity" onClick={() => setQty(line.key, line.qty + 1)} className="grid size-10 place-items-center sm:size-8 text-muted-foreground hover:text-foreground">
                           <Plus className="size-3" />
                         </button>
                       </div>
