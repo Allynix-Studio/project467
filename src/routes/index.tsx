@@ -50,8 +50,8 @@ function Index() {
           </div>
 
           <div className="order-1 lg:order-2 lg:col-span-6">
-            <figure className="liquid-obsidian relative mx-auto max-w-xl overflow-hidden">
-              <ImageReveal delay={0.15}><img src={heroFigure} alt="Obsidian Ronin collectible figure on a black stone base" width={1280} height={1600} className="aspect-[4/5] max-h-[60svh] w-full object-cover lg:max-h-none" /></ImageReveal>
+            <figure className="liquid-obsidian relative mx-auto w-full max-w-[min(36rem,48svh)] overflow-hidden lg:max-w-xl">
+              <ImageReveal delay={0.15}><img src={heroFigure} alt="Obsidian Ronin collectible figure on a black stone base" width={1280} height={1600} className="aspect-[4/5] w-full object-cover object-top" /></ImageReveal>
               <figcaption className="font-technical absolute inset-x-0 bottom-0 flex justify-between bg-gradient-to-t from-background to-transparent p-5 pt-16 text-[10px] uppercase">
                 <span>Obsidian Ronin</span><span className="text-primary">Limited</span>
               </figcaption>
