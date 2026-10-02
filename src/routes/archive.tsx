@@ -1,3 +1,4 @@
+import { SiteFooter } from "@/components/site-footer";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { CATEGORIES, OBJECTS } from "@/lib/objects";
@@ -128,6 +129,7 @@ function Archive() {
           ))}
         </ul>
       </div>
+      <SiteFooter />
     </main>
   );
 }

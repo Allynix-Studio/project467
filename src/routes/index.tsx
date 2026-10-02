@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { FeaturedObjects } from "@/components/featured-objects";
 import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
 import heroFigure from "@/assets/hero-figure.jpg";
@@ -60,11 +61,19 @@ function Index() {
 
         <FeaturedObjects />
 
-        <footer className="flex flex-wrap items-end justify-between gap-6 border-t border-border pt-5 font-technical text-[10px] uppercase text-muted-foreground">
-          <p>Anime / Objects / Culture</p>
-          <p>Est. 04 / 06 / 07</p>
-        </footer>
+        <section className="grid gap-10 border-t border-border py-20 lg:grid-cols-12">
+          <Reveal className="lg:col-span-4"><p className="font-technical text-[10px] uppercase text-primary">The house / 467</p></Reveal>
+          <Reveal index={1} className="lg:col-span-8"><p className="text-[clamp(1.75rem,3.4vw,3.25rem)] font-medium leading-[1.05]">
+            Not a fan store. An atelier for the culture — every object authentic, every release considered, every piece made to be kept.
+          </p></Reveal>
+          <dl className="font-technical grid grid-cols-3 gap-6 text-[10px] uppercase lg:col-span-8 lg:col-start-5">
+            {[["Speed", "Releases, delivered fast"], ["Precision", "Authenticated pieces"], ["Energy", "Culture, worn daily"]].map(([k, v], i) => (
+              <Reveal key={k} index={i + 2}><dt className="text-foreground">{k}</dt><dd className="mt-2 normal-case text-muted-foreground">{v}</dd></Reveal>
+            ))}
+          </dl>
+        </section>
       </div>
+      <SiteFooter />
     </main>
   );
 }

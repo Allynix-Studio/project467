@@ -15,7 +15,7 @@ export function SiteFooter() {
           <div>
             <p className="mb-4 text-muted-foreground">Shop</p>
             <ul className="space-y-3">
-              {CATEGORIES.filter((c) => c !== "All").map((c) => (
+              {CATEGORIES.map((c) => (
                 <li key={c}>
                   <Link to="/archive" search={{ category: c }} className="transition-colors hover:text-primary">{c}</Link>
                 </li>

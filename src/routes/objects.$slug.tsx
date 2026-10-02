@@ -1,3 +1,4 @@
+import { SiteFooter } from "@/components/site-footer";
 import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
@@ -40,6 +41,7 @@ function ObjectNotFound() {
         <h1 className="mt-4 text-4xl font-medium uppercase">Object not found.</h1>
         <Button asChild variant="outline" className="mt-8"><Link to="/archive">Back to the archive</Link></Button>
       </div>
+      <SiteFooter />
     </main>
   );
 }
@@ -130,6 +132,7 @@ function ObjectPage() {
           </ul>
         </section>
       </div>
+      <SiteFooter />
     </main>
   );
 }

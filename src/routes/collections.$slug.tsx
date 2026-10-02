@@ -1,3 +1,4 @@
+import { SiteFooter } from "@/components/site-footer";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
@@ -37,6 +38,7 @@ function CollectionNotFound() {
         <h1 className="mt-4 text-4xl font-medium uppercase">Collection not found.</h1>
         <Button asChild variant="outline" className="mt-8"><Link to="/collections">All collections</Link></Button>
       </div>
+      <SiteFooter />
     </main>
   );
 }
@@ -99,6 +101,7 @@ function CollectionPage() {
           </section>
         )}
       </div>
+      <SiteFooter />
     </main>
   );
 }

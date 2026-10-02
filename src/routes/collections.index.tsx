@@ -1,3 +1,4 @@
+import { SiteFooter } from "@/components/site-footer";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Reveal } from "@/motion/primitives/reveal";
@@ -55,6 +56,7 @@ function Collections() {
           })}
         </ul>
       </div>
+      <SiteFooter />
     </main>
   );
 }
