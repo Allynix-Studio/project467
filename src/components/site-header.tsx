@@ -104,7 +104,7 @@ export function SiteHeader() {
                 <a
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex items-baseline justify-between py-4 text-4xl font-medium uppercase"
+                  className="flex items-baseline justify-between py-3 text-[clamp(1.75rem,8vw,2.25rem)] font-medium uppercase"
                 >
                   {item.label}
                   <span className="font-technical text-[10px] text-primary">{item.index}</span>
