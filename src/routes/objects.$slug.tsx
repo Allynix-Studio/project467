@@ -4,7 +4,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { OBJECTS, getObject } from "@/lib/objects";
-import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
+import { Reveal } from "@/motion/primitives/reveal";
+import { ObjectViewer } from "@/components/products/object-viewer";
 import { useBag } from "@/lib/bag";
 
 export const Route = createFileRoute("/objects/$slug")({
@@ -67,9 +68,7 @@ function ObjectPage() {
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-          <ImageReveal key={o.slug} className="mx-auto w-full max-w-[48svh] overflow-hidden lg:max-w-none border border-border bg-card">
-            <img src={o.img} alt={o.name} width={960} height={1200} className="aspect-[4/5] w-full object-cover object-top" />
-          </ImageReveal>
+          <ObjectViewer key={o.slug} src={o.img} alt={o.name} />
 
           <Reveal immediate key={`d-${o.slug}`} index={2} className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-technical text-[10px] uppercase text-primary">{o.category} / {o.year} / {o.note}</p>

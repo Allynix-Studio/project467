@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { IntroCurtain } from "@/components/editorial/intro-curtain";
 import { FeaturedObjects } from "@/components/featured-objects";
 import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
 import heroFigure from "@/assets/hero-figure.jpg";
@@ -23,6 +24,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="surface-grain min-h-screen overflow-hidden bg-background text-foreground">
+      <IntroCurtain />
       <SiteHeader />
       <div className="mx-auto flex min-h-screen max-w-[112rem] flex-col px-5 pb-5 pt-16 sm:px-8 sm:pb-7 lg:px-12">
 
@@ -49,7 +51,9 @@ function Index() {
             </dl></Reveal>
           </div>
 
-          <div className="order-1 lg:order-2 lg:col-span-6">
+          <div className="relative order-1 lg:order-2 lg:col-span-6">
+            <p aria-hidden className="pointer-events-none absolute inset-x-0 top-1/2 -z-0 -translate-y-1/2 select-none text-center text-[clamp(5rem,16vw,16rem)] font-medium uppercase leading-none text-transparent [-webkit-text-stroke:1px_var(--color-border)]">Ronin</p>
+            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-full w-3/4 -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-foreground)_10%,transparent),transparent_65%)]" />
             <figure className="liquid-obsidian relative mx-auto w-full max-w-[min(36rem,48svh)] overflow-hidden lg:max-w-xl">
               <ImageReveal delay={0.15}><img src={heroFigure} alt="Obsidian Ronin collectible figure on a black stone base" width={1280} height={1600} className="aspect-[4/5] w-full object-cover object-top" /></ImageReveal>
               <figcaption className="font-technical absolute inset-x-0 bottom-0 flex justify-between bg-gradient-to-t from-background to-transparent p-5 pt-16 text-[10px] uppercase">
@@ -64,10 +68,10 @@ function Index() {
         <section className="grid gap-10 border-t border-border py-20 lg:grid-cols-12">
           <Reveal className="lg:col-span-4"><p className="font-technical text-[10px] uppercase text-primary">The house / 467</p></Reveal>
           <Reveal index={1} className="lg:col-span-8"><p className="text-[clamp(1.75rem,3.4vw,3.25rem)] font-medium leading-[1.05]">
-            Not a fan store. An atelier for the culture — every object authentic, every release considered, every piece made to be kept.
+            Anime shaped how a generation sees the world. We collect the objects worth keeping from it: authentic, considered, built to outlast the hype.
           </p></Reveal>
           <dl className="font-technical grid grid-cols-3 gap-6 text-[10px] uppercase lg:col-span-8 lg:col-start-5">
-            {[["Speed", "Releases, delivered fast"], ["Precision", "Authenticated pieces"], ["Energy", "Culture, worn daily"]].map(([k, v], i) => (
+            {[["Speed", "Drops ship within 48 hours"], ["Precision", "Every piece officially sourced"], ["Energy", "Made to be worn and lived with"]].map(([k, v], i) => (
               <Reveal key={k} index={i + 2}><dt className="text-foreground">{k}</dt><dd className="mt-2 normal-case text-muted-foreground">{v}</dd></Reveal>
             ))}
           </dl>
