@@ -4,7 +4,8 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
 import { OBJECTS, getObject } from "@/lib/objects";
-import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
+import { Reveal } from "@/motion/primitives/reveal";
+import { ObjectViewer } from "@/components/products/object-viewer";
 import { useBag } from "@/lib/bag";
 
 export const Route = createFileRoute("/objects/$slug")({
