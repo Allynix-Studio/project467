@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="lg:col-span-5">
           <p className="text-3xl font-medium uppercase leading-none">Project 467</p>
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            A house for anime culture — objects, garments and art, chosen with a curator's eye.
+            Anime culture, collected. Figures, garments and objects, chosen one at a time.
           </p>
         </div>
         <nav className="font-technical grid grid-cols-2 gap-8 text-[11px] uppercase sm:grid-cols-3 lg:col-span-7" aria-label="Footer">
@@ -32,8 +32,9 @@ export function SiteFooter() {
           <div>
             <p className="mb-4 text-muted-foreground">House</p>
             <ul className="space-y-3 text-muted-foreground">
-              <li>Authentic only</li>
-              <li>Ships worldwide</li>
+              <li>Officially sourced</li>
+              <li>Tracked shipping</li>
+              <li>30-day returns</li>
             </ul>
           </div>
         </nav>

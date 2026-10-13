@@ -64,10 +64,10 @@ function Index() {
         <section className="grid gap-10 border-t border-border py-20 lg:grid-cols-12">
           <Reveal className="lg:col-span-4"><p className="font-technical text-[10px] uppercase text-primary">The house / 467</p></Reveal>
           <Reveal index={1} className="lg:col-span-8"><p className="text-[clamp(1.75rem,3.4vw,3.25rem)] font-medium leading-[1.05]">
-            Not a fan store. An atelier for the culture — every object authentic, every release considered, every piece made to be kept.
+            Anime shaped how a generation sees the world. We collect the objects worth keeping from it: authentic, considered, built to outlast the hype.
           </p></Reveal>
           <dl className="font-technical grid grid-cols-3 gap-6 text-[10px] uppercase lg:col-span-8 lg:col-start-5">
-            {[["Speed", "Releases, delivered fast"], ["Precision", "Authenticated pieces"], ["Energy", "Culture, worn daily"]].map(([k, v], i) => (
+            {[["Speed", "Drops ship within 48 hours"], ["Precision", "Every piece officially sourced"], ["Energy", "Made to be worn and lived with"]].map(([k, v], i) => (
               <Reveal key={k} index={i + 2}><dt className="text-foreground">{k}</dt><dd className="mt-2 normal-case text-muted-foreground">{v}</dd></Reveal>
             ))}
           </dl>
