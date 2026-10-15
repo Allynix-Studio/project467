@@ -14,7 +14,7 @@ function Display({ src }: { src: string }) {
     <group ref={group}>
       {/* Curved photo panel, viewed from both sides */}
       <mesh position={[0, 0.98, 0]}>
-        <cylinderGeometry args={[1.4, 1.4, 1.9, 64, 1, true, -0.55, 1.1]} />
+        <cylinderGeometry args={[1.0, 1.0, 1.9, 64, 1, true, -0.76, 1.52]} />
         <meshBasicMaterial map={tex} side={THREE.DoubleSide} toneMapped={false} />
       </mesh>
       {/* Obsidian plinth */}
