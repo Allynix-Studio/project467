@@ -51,3 +51,12 @@ export const OBJECTS: ArchiveObject[] = [
 ];
 
 export const getObject = (slug: string) => OBJECTS.find((o) => o.slug === slug);
+
+/** Drop code names shown in large type on product pages. */
+export const CODENAMES: Record<string, string> = {
+  "obsidian-ronin": "The Ronin", "sorcerers-hoodie": "The Sealbearer", "straw-hat-varsity-jacket": "The Captain",
+  "survey-corps-utility-jacket": "The Scout", "capsule-corp-technical-tee": "The Engineer", "eva-01-test-type": "Unit One",
+  "gojo-display-figure": "The Limitless", "zoro-scale-figure": "Three Blades", "pochita-life-size-vinyl": "The Companion",
+  "capsule-corp-desk-object": "The Capsule", "akatsuki-ceramic-set": "Red Cloud", "wisteria-incense-set": "The Ward",
+  "alchemy-circle-rug": "The Circle", "kitsune-ink-print": "The Fox",
+};
