@@ -29,8 +29,9 @@ function Index() {
       <div className="mx-auto flex min-h-screen max-w-[112rem] flex-col px-5 pb-5 pt-16 sm:px-8 sm:pb-7 lg:px-12">
 
 
-        <section className="grid flex-1 grid-cols-1 items-center gap-10 py-10 lg:grid-cols-12 lg:gap-12 lg:py-16">
-          <div className="order-2 lg:order-1 lg:col-span-6">
+        <section className="relative grid flex-1 grid-cols-1 items-center gap-10 py-10 lg:grid-cols-12 lg:gap-12 lg:py-16">
+          <p aria-hidden className="pointer-events-none absolute -bottom-6 left-0 hidden select-none whitespace-nowrap text-[18vw] font-medium uppercase leading-none text-transparent [-webkit-text-stroke:1px_var(--color-graphite)] lg:block">Ronin 467</p>
+          <div className="relative order-2 lg:order-1 lg:col-span-6">
             <Reveal immediate index={1}><p className="font-technical mb-6 flex items-center gap-3 text-[10px] uppercase text-primary">
               <span className="h-px w-8 bg-primary" /> Drop 001 / Obsidian Ronin
             </p></Reveal>
@@ -52,8 +53,7 @@ function Index() {
           </div>
 
           <div className="relative order-1 lg:order-2 lg:col-span-6">
-            <p aria-hidden className="pointer-events-none absolute inset-x-0 top-1/2 -z-0 -translate-y-1/2 select-none text-center text-[clamp(5rem,16vw,16rem)] font-medium uppercase leading-none text-transparent [-webkit-text-stroke:1px_var(--color-border)]">Ronin</p>
-            <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-full w-3/4 -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-foreground)_10%,transparent),transparent_65%)]" />
+                        <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-full w-3/4 -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-foreground)_10%,transparent),transparent_65%)]" />
             <figure className="liquid-obsidian relative mx-auto w-full max-w-[min(36rem,48svh)] overflow-hidden lg:max-w-xl">
               <ImageReveal delay={0.15}><img src={heroFigure} alt="Obsidian Ronin collectible figure on a black stone base" width={1280} height={1600} className="aspect-[4/5] w-full object-cover object-top" /></ImageReveal>
               <figcaption className="font-technical absolute inset-x-0 bottom-0 flex justify-between bg-gradient-to-t from-background to-transparent p-5 pt-16 text-[10px] uppercase">
