@@ -3,7 +3,7 @@ import { useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site-header";
 import { Button } from "@/components/ui/button";
-import { OBJECTS, getObject } from "@/lib/objects";
+import { OBJECTS, getObject, CODENAMES } from "@/lib/objects";
 import { Reveal } from "@/motion/primitives/reveal";
 import { ObjectViewer } from "@/components/products/object-viewer";
 import { useBag } from "@/lib/bag";
@@ -68,7 +68,14 @@ function ObjectPage() {
         </nav>
 
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-          <ObjectViewer key={o.slug} src={o.img} alt={o.name} />
+          <div className="relative">
+            <div aria-hidden className="spotlight-cone pointer-events-none absolute -inset-x-10 -top-24 bottom-0 -z-10" />
+            <p aria-hidden className="outline-type pointer-events-none absolute inset-x-0 top-1/3 -z-10 select-none overflow-hidden whitespace-nowrap text-center text-[clamp(4rem,11vw,10rem)] font-medium uppercase leading-none">
+              {CODENAMES[o.slug] ?? o.name}
+            </p>
+            <p className="font-technical mb-4 text-center text-[10px] uppercase tracking-[0.3em] text-primary">Code name / {CODENAMES[o.slug] ?? o.name}</p>
+            <ObjectViewer key={o.slug} src={o.img} alt={o.name} />
+          </div>
 
           <Reveal immediate key={`d-${o.slug}`} index={2} className="lg:sticky lg:top-24 lg:self-start">
             <p className="font-technical text-[10px] uppercase text-primary">{o.category} / {o.year} / {o.note}</p>
