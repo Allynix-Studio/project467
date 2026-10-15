@@ -30,7 +30,7 @@ function Index() {
 
 
         <section className="relative grid flex-1 grid-cols-1 items-center gap-10 py-10 lg:grid-cols-12 lg:gap-12 lg:py-16">
-          <p aria-hidden className="pointer-events-none absolute -bottom-6 left-0 hidden select-none whitespace-nowrap text-[18vw] font-medium uppercase leading-none text-transparent [-webkit-text-stroke:1px_var(--color-graphite)] lg:block">Ronin 467</p>
+          <p aria-hidden className="pointer-events-none absolute -bottom-20 left-0 hidden select-none whitespace-nowrap text-[11vw] font-medium uppercase leading-none text-transparent [-webkit-text-stroke:1px_var(--color-graphite)] lg:block">Ronin 467</p>
           <div className="relative order-2 lg:order-1 lg:col-span-6">
             <Reveal immediate index={1}><p className="font-technical mb-6 flex items-center gap-3 text-[10px] uppercase text-primary">
               <span className="h-px w-8 bg-primary" /> Drop 001 / Obsidian Ronin
