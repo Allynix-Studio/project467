@@ -5,6 +5,9 @@ import { SiteFooter } from "@/components/site-footer";
 import { IntroCurtain } from "@/components/editorial/intro-curtain";
 import { FeaturedObjects } from "@/components/featured-objects";
 import { Showroom } from "@/components/editorial/showroom";
+import { ObjectWheel } from "@/components/editorial/object-wheel";
+import { CardShuffle } from "@/components/editorial/card-shuffle";
+import { ParallaxFigure } from "@/components/editorial/parallax-figure";
 import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
 import heroFigure from "@/assets/hero-figure.jpg";
 
@@ -56,7 +59,7 @@ function Index() {
           <div className="relative order-1 lg:order-2 lg:col-span-6">
                         <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-full w-3/4 -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,color-mix(in_oklch,var(--color-foreground)_10%,transparent),transparent_65%)]" />
             <figure className="liquid-obsidian relative mx-auto w-full max-w-[min(36rem,48svh)] overflow-hidden lg:max-w-xl">
-              <ImageReveal delay={0.15}><img src={heroFigure} alt="Obsidian Ronin collectible figure on a black stone base" width={1280} height={1600} className="aspect-[4/5] w-full object-cover object-top" /></ImageReveal>
+              <ImageReveal delay={0.15}><ParallaxFigure src={heroFigure} /></ImageReveal>
               <figcaption className="font-technical absolute inset-x-0 bottom-0 flex justify-between bg-gradient-to-t from-background to-transparent p-5 pt-16 text-[10px] uppercase">
                 <span>Obsidian Ronin</span><span className="text-primary">Limited</span>
               </figcaption>
@@ -66,6 +69,8 @@ function Index() {
 
         <Showroom />
         <FeaturedObjects />
+        <ObjectWheel />
+        <CardShuffle />
 
         <section className="grid gap-10 border-t border-border py-20 lg:grid-cols-12">
           <Reveal className="lg:col-span-4"><p className="font-technical text-[10px] uppercase text-primary">The house / 467</p></Reveal>

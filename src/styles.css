@@ -210,3 +210,8 @@
 .group:hover .tilt-card { transform: perspective(900px) rotateX(4deg) rotateY(-6deg) translateY(-6px); box-shadow: 0 30px 60px -20px color-mix(in oklch, var(--vermilion) 45%, transparent); }
 @keyframes enter-pulse { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
 .enter-pulse { animation: enter-pulse 2.4s ease-in-out infinite; }
+@keyframes wheel-spin { to { transform: rotate(360deg); } }
+@keyframes wheel-counter { to { transform: rotate(-360deg); } }
+.wheel-spin { animation: wheel-spin 90s linear infinite; }
+.wheel-counter { animation: wheel-counter 90s linear infinite; }
+.wheel-spin:hover, .wheel-spin:hover .wheel-counter { animation-play-state: paused; }
