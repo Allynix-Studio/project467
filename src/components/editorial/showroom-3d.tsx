@@ -42,8 +42,8 @@ function Carousel({ images }: { images: string[] }) {
 
 export default function Showroom3D({ images }: { images: string[] }) {
   return (
-    <Canvas camera={{ position: [0, 1.6, 7.5], fov: 38 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
-      <fog attach="fog" args={["#1a0705", 6, 13]} />
+    <Canvas camera={{ position: [0, 2.4, 11], fov: 34 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+      <fog attach="fog" args={["#1a0705", 9, 17]} />
       <ambientLight intensity={0.3} />
       <pointLight position={[0, 4, 0]} color="#e53920" intensity={30} />
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.13, 0]}>
