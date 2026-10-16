@@ -4,3 +4,4 @@
 - [x] Replace placeholder products with the 12 SOP products (photos, prices, details)
 - [ ] Checkout — on hold at the user's request (Shopify recommended for physical goods)
 - [x] Rotating 3D product view
+- [x] Redesign from the 165 references: Enter screen, red-glow 3D showroom, spotlight code-name product pages, card effects
