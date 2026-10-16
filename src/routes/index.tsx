@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { IntroCurtain } from "@/components/editorial/intro-curtain";
 import { FeaturedObjects } from "@/components/featured-objects";
+import { Showroom } from "@/components/editorial/showroom";
 import { Reveal, ImageReveal } from "@/motion/primitives/reveal";
 import heroFigure from "@/assets/hero-figure.jpg";
 
@@ -63,6 +64,7 @@ function Index() {
           </div>
         </section>
 
+        <Showroom />
         <FeaturedObjects />
 
         <section className="grid gap-10 border-t border-border py-20 lg:grid-cols-12">
