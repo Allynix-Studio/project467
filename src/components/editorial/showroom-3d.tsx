@@ -46,11 +46,11 @@ export default function Showroom3D({ images }: { images: string[] }) {
       <fog attach="fog" args={["#1a0705", 9, 17]} />
       <ambientLight intensity={0.3} />
       <pointLight position={[0, 4, 0]} color="#e53920" intensity={30} />
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.13, 0]}>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.83, 0]}>
         <circleGeometry args={[8, 64]} />
         <meshStandardMaterial color="#120604" metalness={0.8} roughness={0.35} />
       </mesh>
-      <Suspense fallback={null}><Carousel images={images} /></Suspense>
+      <group position={[0, -0.7, 0]}><Suspense fallback={null}><Carousel images={images} /></Suspense></group>
     </Canvas>
   );
 }
