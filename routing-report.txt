@@ -1,0 +1,60 @@
+src\components\commerce\bag-drawer.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\commerce\bag-drawer.tsx:34: <Link to="/archive">Browse the archive</Link>
+src\components\editorial\card-shuffle.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\editorial\card-shuffle.tsx:31: <Link to="/collections/$slug" params={{ slug: top.slug }} className="font-technical bg-primary px-5 py-3 text-[10px] uppercase text-primary-foreground">
+src\components\editorial\object-wheel.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\editorial\object-wheel.tsx:64: <Link to="/objects/$slug" params={{ slug: a.slug }} className="font-technical mt-4 border-b border-primary pb-1 text-[10px] uppercase">
+src\components\editorial\showroom.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\editorial\showroom.tsx:32: <li key={o.slug}><Link to="/objects/$slug" params={{ slug: o.slug }} className="block border border-border bg-background/60 px-3 py-2 backdrop-blur transition-colors hover:border-primary">{o.name}</Link></li>
+src\components\navigation\search-overlay.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\navigation\search-overlay.tsx:73: <Link key={c} to="/archive" search={{ category: c as "Apparel" }} onClick={onClose} className="font-technical border border-border px-4 py-2 text-[11px] uppercase text-muted-foreground hover:border-primary hover:text-foreground">
+src\components\navigation\search-overlay.tsx:89: <Link to="/objects/$slug" params={{ slug: o.slug }} onClick={onClose} className="group flex items-center gap-4 py-3">
+src\components\navigation\search-overlay.tsx:109: <Link to="/collections/$slug" params={{ slug: c.slug }} onClick={onClose} className="text-xl font-medium uppercase hover:text-primary">
+src\components\featured-objects.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\featured-objects.tsx:20: <Link to="/archive" className="font-technical border-b border-border pb-1 text-[11px] uppercase text-muted-foreground transition-colors hover:border-primary hover:text-foreground">
+src\components\featured-objects.tsx:28: <Link to="/objects/$slug" params={{ slug: o.slug }} className="group block">
+src\components\site-footer.tsx:1: import { Link } from "@tanstack/react-router";
+src\components\site-footer.tsx:20: <Link to="/archive" search={{ category: c }} className="transition-colors hover:text-primary">{c}</Link>
+src\components\site-footer.tsx:28: <li><Link to="/archive" className="transition-colors hover:text-primary">Archive</Link></li>
+src\components\site-footer.tsx:29: <li><Link to="/collections" className="transition-colors hover:text-primary">Collections</Link></li>
+src\components\site-header.tsx:2: import { Link } from "@tanstack/react-router";
+src\components\site-header.tsx:50: <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
+src\routes\__root.tsx:2: import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+src\routes\__root.tsx:7: useRouter,
+src\routes\__root.tsx:11: } from "@tanstack/react-router";
+src\routes\__root.tsx:27: <Link
+src\routes\__root.tsx:41: const router = useRouter();
+src\routes\archive.tsx:2: import { createFileRoute, Link } from "@tanstack/react-router";
+src\routes\archive.tsx:20: export const Route = createFileRoute("/archive")({
+src\routes\archive.tsx:45: const search = Route.useSearch();
+src\routes\archive.tsx:46: const navigate = Route.useNavigate();
+src\routes\archive.tsx:70: <Link
+src\routes\archive.tsx:109: <Link to="/archive" className="font-technical mt-4 inline-block border-b border-primary pb-1 text-[11px] uppercase">Clear filters</Link>
+src\routes\archive.tsx:115: <li key={o.id} className="group"><Reveal index={i % 4}><Link to="/objects/$slug" params={{ slug: o.slug }} className="block">
+src\routes\collections.$slug.tsx:2: import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+src\routes\collections.$slug.tsx:7: export const Route = createFileRoute("/collections/$slug")({
+src\routes\collections.$slug.tsx:39: <Button asChild variant="outline" className="mt-8"><Link to="/collections">All collections</Link></Button>
+src\routes\collections.$slug.tsx:47: const { collection: c } = Route.useLoaderData();
+src\routes\collections.$slug.tsx:56: <Link to="/collections" className="hover:text-foreground">Collections</Link> / <span className="text-foreground">{c.index}</span>
+src\routes\collections.$slug.tsx:72: <Link to="/objects/$slug" params={{ slug: o.slug }} className="group block">
+src\routes\collections.$slug.tsx:95: <Link to="/collections/$slug" params={{ slug: x.slug }} className="text-2xl font-medium uppercase transition-colors hover:text-primary">
+src\routes\collections.index.tsx:2: import { createFileRoute, Link } from "@tanstack/react-router";
+src\routes\collections.index.tsx:7: export const Route = createFileRoute("/collections/")({
+src\routes\collections.index.tsx:39: <Link to="/collections/$slug" params={{ slug: c.slug }} className="group grid gap-8 py-12 lg:grid-cols-[1fr_1.4fr] lg:items-center">
+src\routes\index.tsx:1: import { createFileRoute, Link } from "@tanstack/react-router";
+src\routes\index.tsx:14: export const Route = createFileRoute("/")({
+src\routes\index.tsx:49: <Button size="lg" asChild><Link to="/objects/$slug" params={{ slug: "obsidian-ronin" }}>Shop the drop</Link></Button>
+src\routes\index.tsx:50: <Button size="lg" variant="outline" asChild><Link to="/archive">Enter the archive</Link></Button>
+src\routes\objects.$slug.tsx:3: import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+src\routes\objects.$slug.tsx:11: export const Route = createFileRoute("/objects/$slug")({
+src\routes\objects.$slug.tsx:43: <Button asChild variant="outline" className="mt-8"><Link to="/archive">Back to the archive</Link></Button>
+src\routes\objects.$slug.tsx:51: const { object: o } = Route.useLoaderData();
+src\routes\objects.$slug.tsx:65: <Link to="/archive" className="hover:text-foreground">Archive</Link> / {" "}
+src\routes\objects.$slug.tsx:66: <Link to="/archive" search={{ category: o.category }} className="hover:text-foreground">{o.category}</Link> / {" "}
+src\routes\objects.$slug.tsx:127: <Link to="/objects/$slug" params={{ slug: r.slug }} className="group block">
+src\router.tsx:1: import { QueryClient } from "@tanstack/react-query";
+src\router.tsx:2: import { createRouter } from "@tanstack/react-router";
+src\routeTree.gen.ts:90: declare module '@tanstack/react-router' {
+src\routeTree.gen.ts:143: declare module '@tanstack/react-start' {
+src\server.ts:14: serverEntryPromise = import("@tanstack/react-start/server-entry").then(
+src\start.ts:1: import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/react-start";
